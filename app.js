@@ -1,7 +1,7 @@
 const yargs = require('yargs');
 const addNote = require('./components/add-note/addNote.js');
 const removeNote = require('./components/remove-note/removeNote.js');
-const showList = require('./components/list/show-list.js');
+const showList = require('./components/show-list/show-list.js');
 const readNote = require('./components/read-note/readNote.js');
 
 const title = {
