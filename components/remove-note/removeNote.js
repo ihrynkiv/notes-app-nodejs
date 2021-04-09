@@ -1,19 +1,19 @@
-const fs = require('fs');
-const { loadNotes, saveNotes } = require('../utils.js');
+const { errorMsg, successMsg } = require('../text-styles.js');
+const { loadNotes, saveNotes, isTitleMatch } = require('../utils.js');
 
 const removeNote = (title) => {
   let notes = loadNotes();
-  const isExist = notes.some((note) => note.title === title);
+  const isExist = isTitleMatch(notes, title);
 
   if (!isExist) {
-    console.log('Note not found!');
+    console.log(errorMsg('Note not found!'));
     return;
   }
 
   notes = notes.filter((note) => note.title !== title);
   saveNotes(notes);
 
-  console.log('Note was removed');
+  console.log(successMsg('Note removed!'));
 };
 
 module.exports = removeNote;

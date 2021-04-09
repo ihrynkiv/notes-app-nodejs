@@ -1,12 +1,12 @@
-const fs = require('fs');
-const { loadNotes, saveNotes } = require('../utils.js');
+const { errorMsg, successMsg } = require('../text-styles.js');
+const { loadNotes, saveNotes, isTitleMatch } = require('../utils.js');
 
 const addNote = (title, body) => {
   const notes = loadNotes();
-  const isDuplicateNote = notes.some((note) => note.title === title);
+  const isDuplicateNote = isTitleMatch(notes, title);
 
   if (isDuplicateNote) {
-    console.log('Note title taken');
+    console.log(errorMsg('Note title taken'));
     return;
   }
 
@@ -16,7 +16,7 @@ const addNote = (title, body) => {
   });
 
   saveNotes(notes);
-  console.log('New note added');
+  console.log(successMsg('New note added'));
 };
 
 module.exports = addNote;

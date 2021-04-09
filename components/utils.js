@@ -13,4 +13,7 @@ const saveNotes = (notes) => {
   fs.writeFileSync('data/notes.json', dataJSON);
 };
 
-module.exports = { loadNotes, saveNotes };
+const isTitleMatch = (notes, title) =>
+  notes.some((note) => note.title === title);
+
+module.exports = { loadNotes, saveNotes, isTitleMatch };

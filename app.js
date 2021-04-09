@@ -1,4 +1,3 @@
-const chalk = require('chalk');
 const yargs = require('yargs');
 const addNote = require('./components/add-note/addNote.js');
 const removeNote = require('./components/remove-note/removeNote.js');
