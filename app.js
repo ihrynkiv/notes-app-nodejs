@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const yargs = require('yargs');
-const { getNotes, addNote } = require('./notes.js');
+const addNote = require('./components/add-note/addNote.js');
 
 // Create add command
 yargs.command({
