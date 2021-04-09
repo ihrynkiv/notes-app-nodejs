@@ -8,4 +8,9 @@ const loadNotes = () => {
   }
 };
 
-module.exports = loadNotes;
+const saveNotes = (notes) => {
+  const dataJSON = JSON.stringify(notes);
+  fs.writeFileSync('data/notes.json', dataJSON);
+};
+
+module.exports = { loadNotes, saveNotes };
