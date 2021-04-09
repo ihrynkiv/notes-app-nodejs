@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { errorMsg } = require('./text-styles.js');
 
 const loadNotes = () => {
   try {
@@ -16,4 +17,13 @@ const saveNotes = (notes) => {
 const isTitleMatch = (notes, title) =>
   notes.some((note) => note.title === title);
 
-module.exports = { loadNotes, saveNotes, isTitleMatch };
+const findNote = (notes, title) => {
+  const isExist = isTitleMatch(notes, title);
+  if (!isExist) {
+    console.log(errorMsg('Note not found!'));
+    return false;
+  }
+  return true;
+};
+
+module.exports = { loadNotes, saveNotes, isTitleMatch, findNote };

@@ -11,7 +11,7 @@ node app.js [command] [options]
 | Command | Describe       | Required options |
 | ------- | -------------- | ---------------- |
 | add     | Add a new note | --title, --body  |
-| remove  | Remove a note  |                  |
+| remove  | Remove a note  | --                  |
 | read    | Read a note    |                  |
 | list    | List of notes  |                  |
 
